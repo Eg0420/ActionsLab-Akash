@@ -1,0 +1,41 @@
+name: Build and Test Pipeline - Akash
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Start Build
+        run: echo "Starting build process..."
+
+      - name: Simulate Compilation
+        run: sleep 3
+
+      - name: Build Complete
+        run: echo "Build completed successfully"
+
+      - name: Built By
+        run: echo "Built by Akash"
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run Tests
+        run: echo "Running automated tests..."
+
+      - name: Simulate Tests
+        run: sleep 2
+
+      - name: Print Date
+        run: date
+
+      - name: Tests Passed
+        run: echo "All tests passed for Akash"
